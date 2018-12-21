@@ -1,0 +1,30 @@
+﻿  stdafx.cpp
+  AssemblyTools.cpp
+c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\assemblytools.cpp(58): warning C4309: “参数”: 截断常量值
+  C-AutoCardMaster.cpp
+  CallTools.cpp
+c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\calltools.cpp(98): warning C4244: “return”: 从“INT32”转换到“float”，可能丢失数据
+c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\calltools.cpp(103): warning C4244: “return”: 从“INT32”转换到“float”，可能丢失数据
+c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\calltools.cpp(129): warning C4244: “初始化”: 从“float”转换到“INT32”，可能丢失数据
+  DialogMain.cpp
+  GlobalData.cpp
+  MemRWer.cpp
+  game.cpp
+c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\game.cpp(101): warning C4018: “>”: 有符号/无符号不匹配
+c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\game.cpp(105): warning C4018: “>”: 有符号/无符号不匹配
+c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\game.cpp(122): warning C4018: “>”: 有符号/无符号不匹配
+c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\game.cpp(180): warning C4101: “temp”: 未引用的局部变量
+  正在生成代码
+  6 of 115 functions ( 5.2%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  已完成代码的生成
+AssemblyTools.obj : warning LNK4020: “c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\release\vc141.pdb”中的类型记录已损坏；某些符号和类型可能无法从调试器中访问
+C-AutoCardMaster.obj : warning LNK4020: “c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\release\vc141.pdb”中的类型记录已损坏；某些符号和类型可能无法从调试器中访问
+CallTools.obj : warning LNK4020: “c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\release\vc141.pdb”中的类型记录已损坏；某些符号和类型可能无法从调试器中访问
+DialogMain.obj : warning LNK4020: “c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\release\vc141.pdb”中的类型记录已损坏；某些符号和类型可能无法从调试器中访问
+game.obj : warning LNK4020: “c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\release\vc141.pdb”中的类型记录已损坏；某些符号和类型可能无法从调试器中访问
+GlobalData.obj : warning LNK4020: “c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\release\vc141.pdb”中的类型记录已损坏；某些符号和类型可能无法从调试器中访问
+MemRWer.obj : warning LNK4020: “c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\release\vc141.pdb”中的类型记录已损坏；某些符号和类型可能无法从调试器中访问
+stdafx.obj : warning LNK4020: “c:\users\admin\source\repos\c-autocardmaster\c-autocardmaster\release\vc141.pdb”中的类型记录已损坏；某些符号和类型可能无法从调试器中访问
+  C-AutoCardMaster.vcxproj -> C:\Users\admin\source\repos\C-AutoCardMaster\Release\C-AutoCardMaster.exe
