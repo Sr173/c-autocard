@@ -43,12 +43,12 @@ void press_w() {
 }
 
 INT32 GetSkillState() {
-	return gMrw->readInt8(gMrw->readInt32(base_baseAddr, 2 ,0x8, 0x8) + 0xB4);
+	return gMrw->readInt8(gMrw->readInt32(base_baseAddr, 2 ,0x8, 0x8) + 0xF4);
 }
 
 void GetCard(INT32 data,INT32 key) {
 	bool Isbegin = false;
-	if (gMrw->readInt32(base_IsCheat, { 0x7C }) == 1 || GetSkillState() != 0 || Isbegin || gMrw->readInt32(base_baseAddr, 5, 0x8, 0x8, 0x1C, 0x4, 0x1F) != CARD_NULL)
+	if (gMrw->readInt32(base_IsCheat, { 0x7C }) == 1 || GetSkillState() != 0 || Isbegin || gMrw->readInt32(base_baseAddr, 5, 0x8, 0x8, 0x24, 0x4, 0x1F) != CARD_NULL)
 		return;
 	if (key != 'W')
 		press_w();
@@ -57,7 +57,7 @@ void GetCard(INT32 data,INT32 key) {
 
 	//gMrw->readInt32(base_baseAddr, { 1,2,3 });
 
-	while (gMrw->readInt32(base_baseAddr, 5 ,0x8, 0x8, 0x1C,0x4,0x1F) != data) {
+	while (gMrw->readInt32(base_baseAddr, 5 ,0x8, 0x8, 0x24,0x4,0x1F) != data) {
 		Sleep(1);
 		if (time++ >= 5000) {
 			Isbegin = false;
@@ -83,7 +83,7 @@ void GetCard(INT32 data,INT32 key) {
 }
 
 DWORD WINAPI walk_attack(LPVOID) {
-	return 0;
+	//return 0;
 	INT32 lastAttackTime = 0;
 	INT32 currentSleleteObj = CallTools::getLastChooseObj();
 	while (1) {
@@ -93,9 +93,7 @@ DWORD WINAPI walk_attack(LPVOID) {
 				CallTools::attack(CallTools::getLastChooseObj());
 			}
 			else {
-
-
-				INT32 bestObj = CallTools::getBestAttackObj(0x1401);
+				INT32 bestObj = CallTools::getBestAttackObj(0x18);
 				if (bestObj != 0) {
 					{
 						if (GetTickCount() > (lastAttackTime + (INT32)(1000.0 / CallTools::getMyHeroAttackSpeed()) + 10)) {
@@ -199,9 +197,8 @@ void begin() {
 	HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, false, pid);
 
 	gMrw = new MemRWer(hProcess);
-	//CallTools::Init();
-
-	//CallTools::at = new AssemblyTools();
+	CallTools::Init();
+	
 
 	WCHAR temp[10];
 
@@ -229,7 +226,7 @@ void begin() {
 	if (IsDlgButtonChecked(gMainHwnd, IDC_CHECK3) == BST_CHECKED)
 		hCard = CreateThread(0, 0, main_thread , 0, 0, 0);
 	
-	//hAttack = CreateThread(0, 0, walk_attack, 0, 0, 0);;
+	hAttack = CreateThread(0, 0, walk_attack, 0, 0, 0);;
 
 }
 

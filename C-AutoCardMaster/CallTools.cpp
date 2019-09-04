@@ -7,6 +7,7 @@ AssemblyTools* at;
 void CallTools::Init()
 {
 	at = new AssemblyTools();
+	//at->setTimer();
 }
 void CallTools::end()
 {
@@ -20,7 +21,7 @@ INT32 CallTools::getLastChooseObj()
 
 INT32 CallTools::getObjPosPoint(INT32 obj)
 {
-	return obj + 0xFC;
+	return obj + 0x1A0;
 }
 
 void CallTools::move()
@@ -32,7 +33,7 @@ void CallTools::move()
 	at->push(0);
 	at->push(0);
 	at->push(0);
-	at->push(gMrw->readInt32(base_mouse, 1, 0x14) + 0x1C);
+	at->push(gMrw->readInt32(base_mouse, 1, 0x14) + 0x10);
 	at->push(2);
 	at->mov_ecx(gMrw->readInt32(base_MyHero));
 	at->mov_eax(call_attack);
@@ -80,12 +81,12 @@ void CallTools::attack(INT32 obj)
 
 float CallTools::getMyHeroAttackSpeed()
 {
-	return gMrw->readFloat(gMrw->readInt32(base_baseAddr, 3, 0x7C, 0x4, 0x90) + 0x18);
+	return gMrw->readFloat(gMrw->readInt32(base_baseAddr, 3, 0x80, 0x4, 0x170) + 0x18);
 }
 
 float CallTools::getMyHeroAttack()
 {
-	return gMrw->readFloat(gMrw->readInt32(base_baseAddr, 3, 0x7C, 0x4, 0x90) + 0x10);
+	return gMrw->readFloat(gMrw->readInt32(base_baseAddr, 3, 0x80, 0x4, 0x170) + 0x10);
 }
 
 float CallTools::getObjHp(INT32 obj)
@@ -144,7 +145,6 @@ INT32 CallTools::getBestAttackObj(INT32 objType)
 			if (getObjHp(bestObj) > getObjHp(obj))
 				bestObj = obj;
 		}
-
 	}
 	return bestObj;
 }

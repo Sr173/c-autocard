@@ -42,24 +42,6 @@
 
 
 
-#include "C:\辅助库文件\AES.h"
-#ifdef _WIN64
-#include "F:\StreamControl\StreamControl\StreamReader.h"
-#include "F:\StreamControl\StreamControl\StreamWriter.h"
-#pragma comment(lib,"F:\\StreamControl\\x64\\Release\\StreamControl.lib")
-#pragma comment(lib,"F:\\标准AES\\x64\\Release\\StdAes.lib")
-
-#else
-
-#include "C:\辅助库文件\StreamRWer.h"
-#pragma comment(lib,"C:\\辅助库文件\\StreamControl.lib")
-
-
-#pragma comment(lib,"C:\\辅助库文件\\StdAes.lib")
-#endif
-
-
-
 #define PSAPI_VERSION 1
 #include <Psapi.h>
 #pragma comment(lib, "Psapi.lib")

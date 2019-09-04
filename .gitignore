@@ -3,3 +3,9 @@
 ################################################################################
 
 /.vs/C-AutoCardMaster/v16
+/C-AutoCardMaster/Debug
+*.tlog
+*.obj
+*.pdb
+*.exe
+*.ilk
